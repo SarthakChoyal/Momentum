@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Momentum</title>
+  <style>
+    body {
+    font-family: 'Trebuchet MS', sans-serif;
+    text-align: center;
+    padding-top:4%;
+    background-image: url("Untitled-1.png");
+    background-size: 1920px, 1080px;
+    background-repeat: no-repeat;
+    font-size: 50px;
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+    }
+    #quote {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="date"></div>
+  <div id="time"></div>
+  <div id="quote"></div>
+  <script>
+    var quotes = [
+      "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
+      "It does not matter how slowly you go as long as you do not stop.",
+      "The only way to do great work is to love what you do.",
+      "It's not who you are that holds you back, it's who you think you're not.",
+      "Believe you can and you're halfway there.",
+      "Life doesn't always go the way you expect it, But it you quit today, think about what you won't be able to do tomorrow",
+      "You can't turn back the clock, But you can wind it up again."
+    ];
+    function displayDateTime() {
+      var date = new Date();
+      var dateString = date.toLocaleDateString();
+      var timeString = date.toLocaleTimeString();
+      document.getElementById("date").innerHTML = dateString;
+      document.getElementById("time").innerHTML = timeString;
+    }
+    function displayQuote() {
+      var quote = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote").innerHTML = quote;
+    }
+    setInterval(displayDateTime, 1000);
+    displayQuote();
+  </script>
+</body>
+</html>
+ 
+  
+  
+  
+  
